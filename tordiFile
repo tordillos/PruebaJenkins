@@ -1,10 +1,22 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Test') {
             steps {
-                echo 'Hello world!' 
+                echo 'Test' 
+                sh "mvn clean compile test"
             }
+        }
+        stage('Build') {
+            steps {
+                echo 'Generate image' 
+                sh "mvn clean install -Dmaven.test.skip=true"
+            }
+        }
+        stage('Publish') {
+        	steps {
+        		echo 'Publis to Web Server'
+        	}
         }
     }
 }
