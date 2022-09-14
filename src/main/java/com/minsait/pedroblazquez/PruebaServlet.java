@@ -19,7 +19,7 @@ public class PruebaServlet extends HttpServlet {
     public PruebaServlet() {
         super();
     }
-    // Añado un comentario
+    // Elimino comentario
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
